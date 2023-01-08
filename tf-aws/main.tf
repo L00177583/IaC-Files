@@ -34,6 +34,7 @@ resource "aws_security_group" "web" {
     cidr_blocks = [var.remote_user_addr]
   }
 
+  
 }
 
   resource "aws_s3_bucket_public_access_block" "S3" {
