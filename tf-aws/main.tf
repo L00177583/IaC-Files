@@ -13,13 +13,14 @@ resource "aws_instance" "Web" {
   }
 }
 
-resource "aws_s3_bucket" "b" {
+resource "aws_s3_bucket" "S3" {
   bucket = "my-tf-test-bucket"
 
   tags = {
     Name        = "My bucket"
     Environment = "Dev"
   }
+
 }
 
 resource "aws_security_group" "web" {
@@ -34,6 +35,16 @@ resource "aws_security_group" "web" {
     cidr_blocks = [var.remote_user_addr]
   }
 
+}
+
+resource "aws_s3_bucket_public_access_block" "S3" {
+  bucket = aws_s3_bucket.S3.id
+
+  //block_public_acls       = true
+  //block_public_policy     = true
+  //ignore_public_acls      = true
+  //restrict_public_buckets = true
+  block_public_acls = true
 }
 
 output "instance_public_dns" {
