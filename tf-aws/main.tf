@@ -13,6 +13,15 @@ resource "aws_instance" "Web" {
   }
 }
 
+resource "aws_s3_bucket" "b" {
+  bucket = "my-tf-test-bucket"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
+
 resource "aws_security_group" "web" {
   name        = "web-security-group"
   description = "allow access to web user"
