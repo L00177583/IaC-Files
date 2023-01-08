@@ -22,7 +22,7 @@ resource "aws_security_group" "web" {
     to_port     = 22
     from_port   = 22
     protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = [var.remote_user_addr]
   }
 
 }
