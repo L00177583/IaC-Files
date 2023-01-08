@@ -8,7 +8,7 @@ services:
     
     working_dir: /infra
     environment:
-      - AWS_ACCESS_KEY_ID="AKIA5HETQUZ2ZEHXVCE4"
-      - AWS_SECRET_ACCESS_KEY="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"
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_ACCESS_KEY}
       - AWS_SESSION_TOKE=${AWS_SESSION_TOKE}
      
