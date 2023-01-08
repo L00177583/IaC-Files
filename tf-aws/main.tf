@@ -20,7 +20,6 @@ resource "aws_s3_bucket" "S3" {
     Name        = "My bucket"
     Environment = "Dev"
   }
-
 }
 
 resource "aws_security_group" "web" {
