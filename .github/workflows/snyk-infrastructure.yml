@@ -29,4 +29,4 @@ jobs:
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
-          file: tf-aws/
+          file: tf-aws/main.tf
